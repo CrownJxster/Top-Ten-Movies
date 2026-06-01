@@ -1,0 +1,500 @@
+html {
+  /* THE FIX: Converts instant teleporting into a smooth cinematic scroll */
+  scroll-behavior: smooth;
+}
+
+/* Shared styles for all pages */
+body {
+  font-family: sans-serif;
+  margin: 50px;
+  line-height: 1.6;
+}
+
+/* Page-specific background colours */
+.Interests {
+  background-color: #f0f8ff; /* Alice Blue */
+}
+
+.Leto {
+  background-color: #fffaf0; /* Floral White */
+}
+
+.FrankHerbertQuotes {
+  background-color: #f4e4bc; /* A warm, sandy beige */
+  background-image: radial-gradient(#d2b48c 0.5px, #f4e4bc 0.5px); /* Subtle "grainy" effect */
+  background-size: 10px 10px;
+}
+
+/* Header styles */
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+header {
+    background-color: #333; /* Dark background */
+    color: white;           /* Light text */
+    padding: 60px 20px;     /* Big padding makes it feel "grand" */
+    text-align: center;
+    border-bottom: 4px solid #c27e00; /* A golden "spice" line at the bottom */
+    border-radius: 12px; /* Rounded corners for a softer, more modern look */
+}
+
+/* Bless the Maker and His water. Bless the coming and going of Him. */
+.tagline {
+    font-style: italic;
+    opacity: 0.8;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Targets all links EXCEPT those with the .back-to-top-btn class */
+a:not(.back-to-top-btn) {
+  color: #0066cc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:not(.back-to-top-btn):hover {
+  color: #004499;
+  text-decoration: underline;
+  position: relative; top: -1px;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px; /* Pushes it away from the content above */
+}
+
+.card {
+    margin: 40px auto;   /* 40px space between cards, 'auto' centers the card */
+    padding: 30px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* This adds a "shadow" so it looks like it's floating */
+    margin-bottom: 60px; /* Extra space to enjoy the background between books */
+    max-width: 1300px; /* Limits how wide the card can get on large screens */
+    justify-content: center; /* Centers the content horizontally */
+}
+
+.card-movie {
+    margin: 40px auto;   /* 40px space between cards, 'auto' centers the card */
+    padding: 40px;
+    border-radius: 12px;
+    background-color: rgb(159, 155, 155); /* Slightly transparent white */
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* This adds a "shadow" so it looks like it's floating */
+    margin-bottom: 60px; /* Extra space to enjoy the background between movies */
+    max-width: fit-content + 40px; /* Limits how wide the card can get on large screens */
+    max-height: fit-content + 40px; /* Limits how tall the card can get on large screens */
+    justify-content: center; /* Centers the content horizontally */
+}
+
+.book-cover {
+    max-width: 200px; /* Limits the width */
+    height: auto;     /* Keeps the ratio perfect */
+    display: flex;   /* Allows us to center it */
+    margin: 0 auto 20px auto; /* Centers the image and adds space below it */
+    border-radius: 4px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    flex: 1; /* splits space 50/50 between the image and the blurb */
+    justify-content: flex-end; /* Aligns the image to the right side of its container */
+}
+
+.movie-poster {
+    display: flex;   /* Allows us to center it */
+    margin: 0 auto 20px auto; /* Centers the image and adds space below it */
+    border-radius: 4px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    justify-content: center; /* Centers the image horizontally */
+    width: 100%; /* Makes sure it takes up the full width of the container on smaller screens */
+    height: 100%; /* Makes it take up the full height of the container */
+    object-fit: contain; /* Ensures the image covers the area without distortion, cropping if necessary */
+    object-position: center; /* Keeps the important part of the poster centered when cropping occurs */
+    max-width: fit-content; /* Ensures it doesn't stretch too wide on larger screens */
+}
+
+.title-arrival {
+  font-family: 'cinzel', serif;
+  text-transform: uppercase;
+  color: rgba(240, 243, 244, 0.85); /* Slightly translucent pale mist white */
+  letter-spacing: 14px; /* wide interstellar spacing */
+  text-align: center;
+  
+  /* Creates a heavy, smoky cloud aura effect behind the text */
+  text-shadow: 
+    0 0 8px rgba(255, 255, 255, 0.3),  /* Core soft blur */
+    0 0 20px rgba(120, 130, 140, 0.4), /* Smoky grey-blue fog wrap */
+    0 0 40px rgba(0, 0, 0, 0.9);       /* Deep ambient shadow */
+}
+
+.title-dune {
+  font-family: 'dune-font', sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #e5ccb3; /* Subtle, classy desert sand beige */
+  letter-spacing: 16px; /* Massive spacing between letters */
+  text-shadow: 0 0 20px rgba(229, 204, 179, 0.2); /* Very faint sand dust glow */
+  text-align: center;
+}
+
+.title-rpo {
+  font-family: 'player-one-font', sans-serif;
+  text-transform: uppercase;
+  color: #ffffff; /* Bright white center core */
+  
+  /* Thick, vibrant neon lighting effect */
+  text-shadow: 
+    0 0 5px #00f0ff,   /* Sharp cyan inner core */
+    0 0 15px #00f0ff,  /* Medium neon spread */
+    0 0 30px #00aaff;  /* Deep blue ambient room glow */
+}
+
+.title-dragon {
+  font-family: 'dragon-font', sans-serif;
+  text-transform: uppercase;
+  font-weight: 800;
+  
+  /* Weathered, dark volcanic rock color fill */
+  color: #2c3e50; 
+  
+  /* A sharp, chiseled metallic gold inner/outer border line */
+  -webkit-text-stroke: 1.5px #d4af37; 
+  
+  /* Stacking hard, un-blurred shadows downwards to create a heavy stone block depth */
+  text-shadow: 
+    1px 1px 0px #1a252f,
+    2px 2px 0px #1a252f,
+    3px 3px 0px #d4af37, /* Gold layered ridge shadow */
+    4px 4px 0px #111111, /* Final hard rock casting shadow */
+    5px 8px 10px rgba(0, 0, 0, 0.5); /* Soft floor drop shadow */
+}
+
+.title-spiderverse {
+  font-family: 'spider-verse-font', sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #ff0055; /* Vibrant graffiti magenta-pink */
+  
+  /* Thick black cartoon stroke outline */
+  -webkit-text-stroke: 2px #000;
+  
+  /* Creating a sharp 3D comic-book pop effect using stacked shadows */
+  text-shadow: 
+    2px 2px 0px #00bfff,   /* Cyan chromatic aberration layer */
+    4px 4px 0px #000000;  /* Hard black backing shadow */
+    
+  transform: rotate(-2deg); /* Optional: Tilts the title slightly for that comic look */
+}
+
+.title-annihilation {
+  font-family: 'cinzel', serif;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 10px;
+  
+  /* Chromatic aberration effect: stacks a sharp purple, green, and blue glow together */
+  text-shadow: 
+    -2px 0 5px rgba(155, 89, 182, 0.5),  /* Ghostly Violet */
+    2px 0 5px rgba(46, 204, 113, 0.4),   /* Alien Green */
+    0 0 15px rgba(52, 152, 219, 0.3);   /* Shimmering Blue */
+}
+
+.title-pacific-rim {
+  font-family: 'pacific-rim-font', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  
+  /* Creates a vertical brushed steel / metallic gradient */
+  background: linear-gradient(180deg, #ffffff 0%, #a4adba 50%, #4a5568 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Adds a subtle industrial orange/gold rust shadow behind the metal letters */
+  text-shadow: 2px 2px 4px rgba(212, 143, 56, 0.4); 
+}
+
+.title-interstellar {
+  font-family: 'interstellar-font', Arial, sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 12px; /* Cinematic spacing */
+  opacity: 0.9; /* Slightly faded so it isn't aggressively harsh white */
+}
+
+.title-walle {
+  font-family: 'walle-font', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #f0f3f4; /* Clean, polished robot-white */
+  letter-spacing: 2px;
+  
+  /* Subtle drop shadow to make the clean white text pop off a dark background */
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+/* Beginner Trick: Use a span tag in your HTML like: WALL-<span class="walle-e">E</span> */
+.walle-e {
+  color: #e74c3c; /* The signature Axiom-robot warning red */
+}
+
+.title-speed-racer {
+  font-family: 'speed-racer-font', sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  
+  /* Hot racing yellow-to-orange gradient fill */
+  background: linear-gradient(180deg, #fff200 0%, #ff5b00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Forces the text to lean aggressively forward like a racing car */
+  display: inline-block;
+  transform: skewX(-15deg); 
+  
+  /* Double pop shadow: crisp white edge + deep retro magenta shadow block */
+  filter: drop-shadow(2px 2px 0px #ffffff) 
+          drop-shadow(5px 5px 0px #ff007f);
+}
+
+/* 1. The Main Grid Container */
+.movie-gallery {
+  display: grid;
+  
+  /* Creates exactly 3 columns, sharing space equally (1 fraction each) */
+  grid-template-columns: repeat(3, 1fr); 
+  
+  /* Sets a 16px gap spacing between your gallery items */
+  gap: 16px; 
+  
+  /* Adds breathing room to the outer edges of your layout */
+  padding: 20px; 
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .movie-gallery {
+    /* Changes the layout from 3 columns to 1 column on mobile */
+    grid-template-columns: 1fr; 
+  }
+}
+
+/* 2. The Individual Image Cards */
+.gallery-card {
+  width: 100%;
+  
+  /* Forces the card container into a standard widescreen shape */
+  aspect-ratio: 16 / 9; 
+  
+  /* Keeps the corners soft and modern */
+  border-radius: 8px; 
+  
+  /* Hides any image pixels that spill outside the rounded corners */
+  overflow: hidden; 
+  
+  /* Optional: Adds a subtle shadow behind the cards for depth */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* 3. The Images Inside the Cards */
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  
+  /* Fills the box cleanly and fixes any stretched or squished look */
+  object-fit: cover; 
+  
+  /* Centers the shot inside the frame */
+  object-position: center; 
+  aspect-ratio: 16 / 9; /* Ensures the image itself maintains the widescreen ratio */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow to the images for extra depth */
+  border-radius: 8px; /* Matches the card's rounded corners for a cohesive look */
+
+}
+
+/* 1. The Full-Screen Dark Overlay */
+.lightbox-overlay {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  
+  /* Smoothly fade in the dark background */
+  animation: bgFade 0.25s ease-out;
+}
+
+/* 2. The Actual Enlarged Image */
+.lightbox-overlay img {
+  /* THE FIX: Absolute limits to prevent it from ever zooming past the viewport */
+  max-width: 90vw;   /* Maximum 90% of screen width */
+  max-height: 85vh;  /* Maximum 85% of screen height */
+  object-fit: contain; /* Forces the entire frame to stay visible */
+  border-radius: 4px;
+  
+  /* Adds a smooth, premium scale-up pop to the image */
+  animation: imgPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); 
+}
+
+/* ==========================================
+   THE ANMATION TIMELINES
+   ========================================== */
+
+/* Just fades the black opacity */
+@keyframes bgFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Smoothly scales the image from 95% to 100% size so it feels crisp */
+@keyframes imgPop {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* The "X" close button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ==========================================
+   LIGHTBOX ARROW BUTTONS
+   ========================================== */
+
+/* Base styles for both arrows */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Vertically centers the arrows perfectly */
+  color: rgba(255, 255, 255, 0.6); /* Slightly transparent white text */
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none; /* Prevents text highlighting when clicked quickly */
+  padding: 20px;
+  z-index: 1010; /* Ensures buttons sit directly on top of the image */
+  transition: color 0.2s, scale 0.2s;
+}
+
+/* Position the previous arrow on the left edge */
+.prev-btn {
+  left: 30px;
+}
+
+/* Position the next arrow on the right edge */
+.next-btn {
+  right: 30px;
+}
+
+/* Make them brighten and grow slightly when hovered */
+.nav-btn:hover {
+  color: #ffffff;
+  scale: 1.1;
+}
+
+.back-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  z-index: 1000;
+  
+  /* Hidden by default */
+  opacity: 0;
+  pointer-events: none;
+  
+  /* Smooth fade transition */
+  transition: opacity 1s ease; transform: 1s ease; background-color: 1s ease;
+}
+
+/* Class to reveal the button */
+.back-to-top-btn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top-btn:hover {
+  background-color: #555; /* Lighter shade than the default #333 */
+  transform: scale(1.1);   /* Makes the button 10% larger */
+}
+
+.book-info-container {
+    display: flex;       /* This puts the image and blurb side-by-side */
+    align-items: center; /* Centers them vertically against each other */
+    gap: 30px;           /* Adds a nice gap between the image and the text */
+    margin-bottom: 20px; /* Space before the summary starts */
+    justify-content: center; /* Centers the whole container horizontally */
+    width: 100%;        /* Makes sure it takes up the full width of the card */
+}
+
+.quote-info {
+    text-align: center; /* Centers the quote text */
+}
+
+.book-blurb {
+    font-size: 0.9rem;   /* Makes the details slightly smaller and cleaner */
+    line-height: 1.8;    /* Gives the lines of text some space */
+    color: #444;         /* A dark grey for readability */
+    flex: 1;             /* Splits space 50/50 between the image and the blurb */
+    text-align: left;   /* Aligns the text to the left for easier reading */
+    padding-left: 25px; /* Adds some padding to the left of the blurb for better spacing */
+}
+
+/* For mobile: if the screen is too small, stack them back up! */
+@media (max-width: 600px) {
+    .book-info-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center; /* Puts them in a row */
+    list-style: none;        /* Removes the bullets */
+    gap: 30px;              /* Space between links */
+    margin-top: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #c27e00;         /* That spice-gold color! */
+    font-weight: bold;
+}
+
+.center-box {
+  width: 100%;
+  text-align: center;
+  /* Makes sure any inline items inside it stay dead-centre */
+  display: flex;
+  justify-content: center; 
+}
