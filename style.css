@@ -1,42 +1,110 @@
 html {
-  /* THE FIX: Converts instant teleporting into a smooth cinematic scroll */
+  /* Converts instant teleporting into a smooth scroll */
   scroll-behavior: smooth;
 }
 
-/* Shared styles for all pages */
 body {
   font-family: sans-serif;
   margin: 50px;
   line-height: 1.6;
+  background-color: #0B0E14;
+  color: #A0A5B5;
 }
 
-/* Page-specific background colours */
-.Interests {
-  background-color: #f0f8ff; /* Alice Blue */
+h1 {
+  color: #F8F9FA;
+  text-shadow: 0 0 10px rgba(255, 0, 85, 0.3);
 }
 
-.Leto {
-  background-color: #fffaf0; /* Floral White */
-}
-
-.FrankHerbertQuotes {
-  background-color: #f4e4bc; /* A warm, sandy beige */
-  background-image: radial-gradient(#d2b48c 0.5px, #f4e4bc 0.5px); /* Subtle "grainy" effect */
-  background-size: 10px 10px;
-}
-
-/* Header styles */
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
 header {
-    background-color: #333; /* Dark background */
-    color: white;           /* Light text */
-    padding: 60px 20px;     /* Big padding makes it feel "grand" */
+    background-color: #1A1D26;
+    color: #F8F9FA;
+    padding: 60px 20px; 
     text-align: center;
-    border-bottom: 4px solid #c27e00; /* A golden "spice" line at the bottom */
-    border-radius: 12px; /* Rounded corners for a softer, more modern look */
+    border-radius: 12px; 
+}
+
+select {
+  /* reset default browser look */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  display: block;
+  width: 240px;
+  margin: 20px auto;
+  padding: 12px 24px 12px 24px;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #F8F9FA;
+  text-align: center;
+
+  background-color: #1A1D26;
+  border: 2px solid #FF0055;
+  border-radius: 4px;
+  cursor: pointer;
+
+  transition: all 0.25s ease-in-out;
+}
+
+select:hover, select:focus {
+  outline: none;
+  border-color: #00F5D4;
+  color: #00F5D4;
+  box-shadow: 0 0 15px rgba (0, 245, 212, 0.4);
+}
+
+select option {
+  background-color: #0B0E14;
+  color: #F8F9FA;
+  padding: 12px;
+}
+
+/* The grid container in the header */
+.nav-links {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 16px; 
+  list-style: none;
+  padding: 0;
+  max-width: 950px;
+  margin: 30px auto; 
+}
+
+/* Base style for the anchor links inside the list items */
+.nav-links a {
+  display: block;
+  text-align: center;
+  padding: 12px 8px;
+  color: #FF0055; 
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  background-color: rgba(11, 14, 20, 0.6); 
+  border: 1px solid rgba(255, 0, 85, 0.2);
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out; 
+}
+
+.nav-links a:hover {
+  color: #0B0E14; 
+  background-color: #00F5D4; 
+  border-color: #00F5D4;
+  transform: translateY(-3px); 
+  box-shadow: 0 0 15px rgba(0, 245, 212, 0.6); 
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    /* Drops down to 2 columns on small mobile devices so text fits */
+    grid-template-columns: repeat(2, 1fr); 
+  }
 }
 
 /* Bless the Maker and His water. Bless the coming and going of Him. */
@@ -48,14 +116,14 @@ header {
     text-align: center;
 }
 
-/* Targets all links EXCEPT those with the .back-to-top-btn class */
-a:not(.back-to-top-btn) {
+/* Targets all links EXCEPT those in brackets */
+a:not(.back-to-top-btn, .nav-links) {
   color: #0066cc;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-a:not(.back-to-top-btn):hover {
+a:not(.back-to-top-btn, .nav-links):hover {
   color: #004499;
   text-decoration: underline;
   position: relative; top: -1px;
@@ -66,56 +134,45 @@ footer {
   color: white;
   text-align: center;
   padding: 20px;
-  margin-top: 40px; /* Pushes it away from the content above */
+  margin-top: 40px; 
 }
 
 .card {
-    margin: 40px auto;   /* 40px space between cards, 'auto' centers the card */
+    margin: 40px auto;  
     padding: 30px;
     border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    background-color: rgba(255, 255, 255, 0.95);
     border: none;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* This adds a "shadow" so it looks like it's floating */
-    margin-bottom: 60px; /* Extra space to enjoy the background between books */
-    max-width: 1300px; /* Limits how wide the card can get on large screens */
-    justify-content: center; /* Centers the content horizontally */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 60px; 
+    max-width: 1300px; 
+    justify-content: center; 
 }
 
 .card-movie {
-    margin: 40px auto;   /* 40px space between cards, 'auto' centers the card */
+    margin: 40px auto;  
     padding: 40px;
     border-radius: 12px;
-    background-color: rgb(159, 155, 155); /* Slightly transparent white */
+    background-color: rgb(68, 67, 67); 
     border: none;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* This adds a "shadow" so it looks like it's floating */
-    margin-bottom: 60px; /* Extra space to enjoy the background between movies */
-    max-width: fit-content + 40px; /* Limits how wide the card can get on large screens */
-    max-height: fit-content + 40px; /* Limits how tall the card can get on large screens */
-    justify-content: center; /* Centers the content horizontally */
-}
-
-.book-cover {
-    max-width: 200px; /* Limits the width */
-    height: auto;     /* Keeps the ratio perfect */
-    display: flex;   /* Allows us to center it */
-    margin: 0 auto 20px auto; /* Centers the image and adds space below it */
-    border-radius: 4px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-    flex: 1; /* splits space 50/50 between the image and the blurb */
-    justify-content: flex-end; /* Aligns the image to the right side of its container */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 60px; 
+    max-width: fit-content + 40px;
+    max-height: fit-content + 40px; 
+    justify-content: center; 
 }
 
 .movie-poster {
-    display: flex;   /* Allows us to center it */
-    margin: 0 auto 20px auto; /* Centers the image and adds space below it */
+    display: flex; 
+    margin: 0 auto 20px auto; 
     border-radius: 4px;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-    justify-content: center; /* Centers the image horizontally */
-    width: 100%; /* Makes sure it takes up the full width of the container on smaller screens */
-    height: 100%; /* Makes it take up the full height of the container */
-    object-fit: contain; /* Ensures the image covers the area without distortion, cropping if necessary */
-    object-position: center; /* Keeps the important part of the poster centered when cropping occurs */
-    max-width: fit-content; /* Ensures it doesn't stretch too wide on larger screens */
+    justify-content: center; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; 
+    object-position: center; 
+    max-width: fit-content; 
 }
 
 .title-arrival {
@@ -264,17 +321,12 @@ footer {
           drop-shadow(5px 5px 0px #ff007f);
 }
 
-/* 1. The Main Grid Container */
+/* The Main Grid Container */
 .movie-gallery {
   display: grid;
-  
   /* Creates exactly 3 columns, sharing space equally (1 fraction each) */
   grid-template-columns: repeat(3, 1fr); 
-  
-  /* Sets a 16px gap spacing between your gallery items */
   gap: 16px; 
-  
-  /* Adds breathing room to the outer edges of your layout */
   padding: 20px; 
 }
 
@@ -286,40 +338,29 @@ footer {
   }
 }
 
-/* 2. The Individual Image Cards */
+/* The Individual Image Cards */
 .gallery-card {
   width: 100%;
-  
-  /* Forces the card container into a standard widescreen shape */
   aspect-ratio: 16 / 9; 
-  
-  /* Keeps the corners soft and modern */
   border-radius: 8px; 
-  
   /* Hides any image pixels that spill outside the rounded corners */
   overflow: hidden; 
-  
-  /* Optional: Adds a subtle shadow behind the cards for depth */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-/* 3. The Images Inside the Cards */
+/* The Images Inside the Cards */
 .gallery-card img {
   width: 100%;
   height: 100%;
-  
-  /* Fills the box cleanly and fixes any stretched or squished look */
   object-fit: cover; 
-  
-  /* Centers the shot inside the frame */
   object-position: center; 
-  aspect-ratio: 16 / 9; /* Ensures the image itself maintains the widescreen ratio */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow to the images for extra depth */
-  border-radius: 8px; /* Matches the card's rounded corners for a cohesive look */
+  aspect-ratio: 16 / 9; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; 
 
 }
 
-/* 1. The Full-Screen Dark Overlay */
+/* The Full-Screen Dark Overlay */
 .lightbox-overlay {
   display: none; 
   position: fixed;
@@ -337,21 +378,16 @@ footer {
   animation: bgFade 0.25s ease-out;
 }
 
-/* 2. The Actual Enlarged Image */
+/* The Actual Enlarged Image */
 .lightbox-overlay img {
-  /* THE FIX: Absolute limits to prevent it from ever zooming past the viewport */
-  max-width: 90vw;   /* Maximum 90% of screen width */
-  max-height: 85vh;  /* Maximum 85% of screen height */
-  object-fit: contain; /* Forces the entire frame to stay visible */
+  max-width: 90vw; 
+  max-height: 85vh;
+  object-fit: contain;
   border-radius: 4px;
   
   /* Adds a smooth, premium scale-up pop to the image */
   animation: imgPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); 
 }
-
-/* ==========================================
-   THE ANMATION TIMELINES
-   ========================================== */
 
 /* Just fades the black opacity */
 @keyframes bgFade {
@@ -382,16 +418,12 @@ footer {
   cursor: pointer;
 }
 
-/* ==========================================
-   LIGHTBOX ARROW BUTTONS
-   ========================================== */
-
 /* Base styles for both arrows */
 .nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%); /* Vertically centers the arrows perfectly */
-  color: rgba(255, 255, 255, 0.6); /* Slightly transparent white text */
+  color: rgba(255, 255, 255, 0.6); 
   font-size: 50px;
   font-weight: bold;
   cursor: pointer;
@@ -401,12 +433,10 @@ footer {
   transition: color 0.2s, scale 0.2s;
 }
 
-/* Position the previous arrow on the left edge */
 .prev-btn {
   left: 30px;
 }
 
-/* Position the next arrow on the right edge */
 .next-btn {
   right: 30px;
 }
@@ -443,30 +473,8 @@ footer {
 }
 
 .back-to-top-btn:hover {
-  background-color: #555; /* Lighter shade than the default #333 */
+  background-color: #555; 
   transform: scale(1.1);   /* Makes the button 10% larger */
-}
-
-.book-info-container {
-    display: flex;       /* This puts the image and blurb side-by-side */
-    align-items: center; /* Centers them vertically against each other */
-    gap: 30px;           /* Adds a nice gap between the image and the text */
-    margin-bottom: 20px; /* Space before the summary starts */
-    justify-content: center; /* Centers the whole container horizontally */
-    width: 100%;        /* Makes sure it takes up the full width of the card */
-}
-
-.quote-info {
-    text-align: center; /* Centers the quote text */
-}
-
-.book-blurb {
-    font-size: 0.9rem;   /* Makes the details slightly smaller and cleaner */
-    line-height: 1.8;    /* Gives the lines of text some space */
-    color: #444;         /* A dark grey for readability */
-    flex: 1;             /* Splits space 50/50 between the image and the blurb */
-    text-align: left;   /* Aligns the text to the left for easier reading */
-    padding-left: 25px; /* Adds some padding to the left of the blurb for better spacing */
 }
 
 /* For mobile: if the screen is too small, stack them back up! */
@@ -477,24 +485,9 @@ footer {
     }
 }
 
-.nav-links {
-    display: flex;
-    justify-content: center; /* Puts them in a row */
-    list-style: none;        /* Removes the bullets */
-    gap: 30px;              /* Space between links */
-    margin-top: 20px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #c27e00;         /* That spice-gold color! */
-    font-weight: bold;
-}
-
 .center-box {
   width: 100%;
   text-align: center;
-  /* Makes sure any inline items inside it stay dead-centre */
   display: flex;
   justify-content: center; 
 }
